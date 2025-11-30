@@ -35,9 +35,9 @@ public class StaticFactoryDemo {
         System.out.println();
         
         // 4. Number example - returning subtypes
-        System.out.println("3. Number Example (Returning Subtypes):");
-        Number intNum = Number.valueOf("42");
-        Number doubleNum = Number.valueOf("3.14");
+        System.out.println("4. Number Example (Returning Subtypes):");
+        Number intNum = Integer.valueOf("42");
+        Number doubleNum = Double.valueOf("3.14");
         System.out.println("Integer number: " + intNum + " (type: " + intNum.getClass().getSimpleName() + ")");
         System.out.println("Double number: " + doubleNum + " (type: " + doubleNum.getClass().getSimpleName() + ")");
         System.out.println();

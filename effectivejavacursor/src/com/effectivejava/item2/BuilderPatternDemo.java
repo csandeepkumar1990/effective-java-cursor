@@ -109,7 +109,7 @@ public class BuilderPatternDemo {
         // Show validation
         System.out.println("5. VALIDATION EXAMPLE:");
         try {
-            NutritionFacts invalid = new NutritionFacts.Builder(-1, 8)
+            new NutritionFacts.Builder(-1, 8)
                 .calories(100)
                 .build();
         } catch (IllegalArgumentException e) {

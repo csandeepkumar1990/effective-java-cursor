@@ -31,9 +31,21 @@ public class BooleanExample {
         System.out.println("bool1.equals(bool2): " + bool1.equals(bool2)); // true
         
         // Compare with constructor (creates new instances)
-        Boolean bool3 = new Boolean(true);
-        Boolean bool4 = new Boolean(true);
-        System.out.println("bool3 == bool4: " + (bool3 == bool4); // false (different instances)
+        // NOTE: Boolean(boolean) constructor is deprecated since Java 9 and marked for removal.
+        // The code below is commented out for illustration purposes only to demonstrate
+        // why static factory methods are preferred over constructors.
+        // The deprecated constructor would create new instances each time, unlike
+        // the static factory method which returns cached instances.
+        // In production code, always use Boolean.valueOf() instead of new Boolean().
+        // Boolean bool3 = new Boolean(true);  // Deprecated - creates new instance
+        // Boolean bool4 = new Boolean(true);  // Deprecated - creates new instance
+        // System.out.println("bool3 == bool4: " + (bool3 == bool4)); // false (different instances)
+        // System.out.println("bool3.equals(bool4): " + bool3.equals(bool4)); // true
+        
+        // Using static factory method instead (recommended approach)
+        Boolean bool3 = Boolean.valueOf(true);
+        Boolean bool4 = Boolean.valueOf(true);
+        System.out.println("bool3 == bool4: " + (bool3 == bool4)); // true (same cached instance)
         System.out.println("bool3.equals(bool4): " + bool3.equals(bool4)); // true
     }
 }

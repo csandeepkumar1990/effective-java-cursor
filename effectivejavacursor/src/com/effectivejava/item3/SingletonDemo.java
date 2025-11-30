@@ -1,7 +1,6 @@
 package com.effectivejava.item3;
 
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 
 /**
  * Demonstration of the three singleton implementation approaches.

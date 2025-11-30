@@ -16,14 +16,6 @@ public class BigIntegerExample {
     private final int value;
     private final boolean isProbablePrime;
     
-    // Constructor with unclear parameters - what do these ints mean?
-    // This is confusing: BigInteger(int bitLength, int certainty, Random rnd)
-    public BigIntegerExample(int bitLength, int certainty, Random random) {
-        // Simulate generating a probable prime
-        this.value = generateProbablePrime(bitLength, certainty, random);
-        this.isProbablePrime = true;
-    }
-    
     // Static factory method with a descriptive name - much clearer!
     // BigInteger.probablePrime(int bitLength, Random rnd)
     public static BigIntegerExample probablePrime(int bitLength, Random random) {
