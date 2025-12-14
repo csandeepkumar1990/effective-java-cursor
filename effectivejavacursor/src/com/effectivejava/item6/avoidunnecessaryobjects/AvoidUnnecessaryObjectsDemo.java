@@ -67,8 +67,21 @@ public class AvoidUnnecessaryObjectsDemo {
         
         // Static factory methods
         System.out.println("4. STATIC FACTORY METHODS VS CONSTRUCTORS:");
-        System.out.println("   Boolean.valueOf(true) - may reuse cached instance");
+        Boolean b1 = Boolean.valueOf(true);
+        Boolean b2 = Boolean.valueOf(true);
+        // NOTE: Boolean(boolean) constructor is deprecated, but used here for illustration
+        @SuppressWarnings("deprecation")
+        Boolean b3 = new Boolean(true);
+        @SuppressWarnings("deprecation")
+        Boolean b4 = new Boolean(true);
+        Boolean b5 = Boolean.TRUE;  // The cached constant
+        
+        System.out.println("   Boolean.valueOf(true) - reuses cached instance");
         System.out.println("   new Boolean(true) - always creates new instance");
+        System.out.println("   Boolean.valueOf(true) == Boolean.valueOf(true): " + (b1 == b2) + " (same cached object)");
+        System.out.println("   Boolean.valueOf(true) == Boolean.TRUE: " + (b1 == b5) + " (same cached object)");
+        System.out.println("   new Boolean(true) == new Boolean(true): " + (b3 == b4) + " (different objects)");
+        System.out.println("   Boolean.valueOf(true) == new Boolean(true): " + (b1 == b3) + " (different objects)");
         System.out.println("   Prefer static factory methods when available");
         System.out.println();
         
